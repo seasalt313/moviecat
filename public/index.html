@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Cat</title>
+    <!-- add css file -->
+    <link rel="stylesheet" href="main.css">
+    <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+  </head>
+  <body ng-app="MovieApp">
+    <h1>Movie Cat <i class="fa fa-paw" aria-hidden="true"></i>
+    </h1>
+
+    <section id="addingmovies" ng-controller="AddMoviesController">
+      <input type="text" ng-model="movieName" placeholder="Name" class="name input">
+
+      <input type="text" ng-model="movieDate" placeholder="Release Date" class="date input">
+
+      <input type="text" ng-model="movieGenre"  placeholder="Genre" class="genre input">
+
+      <button type="button" name="button" ng-click="addMovie()" id="addmovie">Add to List</button>
+
+      <ul class="movieul">
+        <li ng-repeat="eachMovie in movies" class="each">
+        {{ eachMovie.name }}
+        {{ eachMovie.genre }}
+        {{ eachMovie.date }}
+
+        <button type="button" class="gbtn" ng-click="goodMovie(eachMovie)"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+
+        <button type="button" class="bbtn" ng-click="badMovie(eachMovie)"><i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        </button>
+
+        </li>
+      </ul>
+    </section>
+
+
+
+    <!-- angular file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- add js file -->
+    <script src="app.js" type="text/javascript">
+    </script>
+  </body>
+</html>
